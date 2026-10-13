@@ -1,6 +1,6 @@
 # TP2 – Telemetría de Fórmula 1
 
-**Autor:** _(tu nombre y apellido)_
+**Autor:** Santiago Manuel Fernandez
 **Materia:** Programación Orientada a Datos – Licenciatura en Ciencia de Datos – UCA, 2026
 
 ## Pregunta guía
