@@ -1,0 +1,7 @@
+vuelta_id,piloto,numero_vuelta,tiempo_total,sector_1,sector_2,sector_3,en_boxes,motivo
+V055,LEC,14,1:42.500,28.1,45.2,29.2,True,vuelta en boxes
+V056,COL,14,1:43.100,28.4,45.3,29.4,True,vuelta en boxes
+V057,VER,15,81.950,27.04,31.14,23.77,False,tiempo_total inválido
+V058,NOR,15,1:22.100,28.5,31.2,23.9,False,diferencia con sectores supera tolerancia
+V059,col43,15,1:22.600,27.26,31.39,23.95,False,piloto inválido
+V060,LEC,15,1:22.300,27.16,,23.87,False,sector_2 inválido
