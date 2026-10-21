@@ -62,6 +62,11 @@ Al correr el programa se muestra en consola la auditoría de lectura (`entrada =
 | LEC | 13 | 81.610 | 82.120 | 82.090 | 0.350 |
 | COL | 13 | 82.150 | 82.540 | 82.510 | 0.290 |
 
+**Respuesta a la pregunta guía:**
+
+* **Mejor ritmo de carrera:** **Max Verstappen (`VER`)** sostuvo el mejor ritmo general con el menor tiempo promedio (`81.890` s) y la menor mediana (`81.860` s). Aunque **Lando Norris (`NOR`)** marcó la vuelta rápida aislada de la sesión (`81.350` s), su mayor dispersión (`0.420` s) hizo que su ritmo promedio (`81.940` s) quedara en segundo lugar.
+* **Mayor consistencia:** **Franco Colapinto (`COL`)** fue el piloto más consistente y regular de la carrera al registrar el menor desvío estándar entre sus vueltas (`0.290` s), seguido por Verstappen (`0.310` s) y Leclerc (`0.350` s).
+
 ## Organización del código
 
     TrabajoPractico2_Santiago_Manuel_Fernandez/
@@ -79,6 +84,12 @@ Al correr el programa se muestra en consola la auditoría de lectura (`entrada =
     |   |-- vueltas.csv
     |   `-- vueltas.json
     `-- outputs/
+
+    **Detalle de la carpeta `src/` y sus clases:**
+
+* **`src/fuentes.py`:** gestiona la lectura de datos. Define la excepción propia `ErrorDatos`, la clase base abstracta `FuenteDatos(ABC)` con el contrato `cargar()` y sus dos clases hijas concretas (`FuenteCSV` y `FuenteJSON`), que verifican la existencia del archivo y devuelven los registros como una lista de diccionarios.
+* **`src/pipeline.py`:** contiene el modelo de dominio y las etapas del procesamiento. Incluye la clase inmutable `Vuelta` (`@dataclass(frozen=True)`) que valida cada giro y calcula el tiempo en segundos y la diferencia contra la suma de los 3 sectores; las funciones `convertir_tiempo()`, `validar()`, `limpiar()`, `analizar()` y `comunicar()`; y la clase coordinadora `AplicacionTelemetria`, que recibe una fuente por composición y ejecuta todo el flujo.
+* **`src/main.py`:** es el punto de entrada por consola (`CLI`). Procesa los argumentos (`--input`, `--formato`, `--pilotos`, `--tolerancia`), instancia la fuente correspondiente, corre `AplicacionTelemetria` y muestra los resultados o errores en la terminal.
 
 ## Decisiones de limpieza, interpretación y limitaciones
 
